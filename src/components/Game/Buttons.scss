@@ -1,0 +1,37 @@
+@use "../../assets/style/colors" as *;
+
+.game {
+	.container {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr;
+		gap: 1em;
+		padding: 0.5em 0em;
+		margin: 2em 0;
+	}
+	&__button {
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		border: none;
+		color: $text-color;
+		font-size: 1.3rem;
+		transition: scale 0.3s;
+		&--paper {
+			background-color: $paper-color;
+		}
+		&--rock {
+			background-color: $rock-color;
+		}
+		&--scissors {
+			background-color: $scissors-color;
+		}
+		&:focus {
+			scale: 1.1;
+		}
+	}
+	&__button[disabled] {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+}
